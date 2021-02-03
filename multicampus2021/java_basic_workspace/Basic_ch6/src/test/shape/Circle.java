@@ -5,6 +5,12 @@ public class Circle extends Shape{
 	public Circle(int radius) {
 		this.radius = radius;
 	}
+	public int getRadius() {
+		return radius;
+	}
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
 	public void area() {
 		System.out.println("원의 넓이="+(3.14*radius*radius));
 	}
