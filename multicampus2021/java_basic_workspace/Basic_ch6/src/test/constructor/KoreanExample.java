@@ -11,5 +11,6 @@ public class KoreanExample {
 		System.out.println("k2.ssn : "+ k2.ssn);
 		
 		Korean k3=new Korean();
+		
 	}
 }
