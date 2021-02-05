@@ -11,6 +11,6 @@ public class Test {
 		show.airShow(b);
 		show.airShow(s);
 		show.airShow(a);
-		show.airShow("java");
+		//show.airShow("java");
 	}
 }
