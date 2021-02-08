@@ -1,7 +1,7 @@
 package client;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class ClientUI {
 
@@ -12,8 +12,11 @@ public class ClientUI {
 		TextField tf=new TextField(20);
 		TextArea ta=new TextArea();	
 		
-		ActionListener l=new MyButtonHandler();
-		b1.addActionListener(l);
+		WindowListener fHandler=new MyFrameHandler();
+		f.addWindowListener(fHandler);
+		
+		ActionListener b1Handler=new MyButtonHandler();
+		b1.addActionListener(b1Handler);
 		
 
 		f.add(ta,BorderLayout.CENTER);
