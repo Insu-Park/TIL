@@ -26,7 +26,7 @@ class AnimalList<T>{
 	static public void cryingAnimalList(AnimalList<? extends LandAnimal> al) {//모든 동물을 울게
 		
 		int index=0;
-		do{ 
+		while(index<1000) {
 			try {
 				LandAnimal la = al.get(index);
 				la.crying();
@@ -34,9 +34,8 @@ class AnimalList<T>{
 			catch(IndexOutOfBoundsException e) {
 				
 			}
+			index++;
 		}
-		while(index++<1000);
-		
 	}
 	public void add(T o) {//동물 추가
 		al.add(o);
