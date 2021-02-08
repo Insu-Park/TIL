@@ -3,7 +3,6 @@ package client;
 import java.awt.*;
 import java.awt.event.*;
 
-import javafx.scene.control.RadioButton;
 
 public class ClientUI {
 
@@ -18,12 +17,11 @@ public class ClientUI {
 		TextField tf=new TextField(20);
 		TextArea ta=new TextArea();	
 		
-		RadioButton rb1=new RadioButton("1");
-		RadioButton rb2=new RadioButton("1");
-		RadioButton rb3=new RadioButton("1");
-		Radio
-		
-		
+		CheckboxGroup cbg=new CheckboxGroup();
+		Checkbox checkBox1=new Checkbox("A", cbg, false);
+		Checkbox checkBox2=new Checkbox("B", cbg, false);
+		Checkbox checkBox3=new Checkbox("A", false);
+		Checkbox checkBox4=new Checkbox("B", false);
 		
 		WindowListener fHandler=new MyFrameHandler();
 		f.addWindowListener(fHandler);
@@ -37,14 +35,20 @@ public class ClientUI {
 		f.add(ta,BorderLayout.CENTER);
 		f.add(p1,BorderLayout.SOUTH);
 		f.add(p2,BorderLayout.EAST);
+		
 		p1.add(tf);
 		p1.add(b1);
-		p2.setLayout(new BorderLayout());
-		p2.add(b2, BorderLayout.NORTH);
+		p2.setLayout(new GridLayout(6, 1));
+		
+		p2.add(b2);
 		p2.add(b3);
+		p2.add(checkBox1);
+		p2.add(checkBox2);
+		p2.add(checkBox3);
+		p2.add(checkBox4);
 		
 		p1.setBackground(Color.gray);
-		p2.setBackground(Color.gray);
+		p2.setBackground(Color.white);
 		
 		
 		
