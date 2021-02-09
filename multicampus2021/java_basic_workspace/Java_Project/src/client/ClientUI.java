@@ -2,55 +2,103 @@ package client;
 
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ClientUI {
-
-	public static void main(String[] args) {
+	TextArea ta;
+	TextField tf;	
+	
+	public void chatMsg() {
+		String msg=tf.getText();
+		ta.append(msg+"\n");
+		tf.setText("");
+	}
+	
+	public void onCreate() {
 		Frame f=new Frame("나의 채팅");
-		Panel p1=new Panel();
-		Panel p2=new Panel();
+		Panel p=new Panel();
 		Button b1=new Button("전송1");
-		Button b2=new Button("버튼1");
-		Button b3=new Button("버튼2");
+		 tf=new TextField(20);
+		 ta=new TextArea();		
+		MenuBar mb=new MenuBar();
+		Menu file_menu=new Menu("파일");
+		Menu edit_menu=new Menu("편집");
+		MenuItem open_item=new MenuItem("열기");
+		MenuItem save_item=new MenuItem("저장");
 		
-		TextField tf=new TextField(20);
-		TextArea ta=new TextArea();	
+		file_menu.add(open_item);
+		file_menu.add(save_item);
+		mb.add(file_menu);
+		mb.add(edit_menu);
+		f.setMenuBar(mb);
+		 
+		 
+		open_item.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent a) {
+				System.out.println("file open?");
+				FileDialog open=new FileDialog(f, "열기 창", FileDialog.LOAD );
+				open.setVisible(true);
+				
+				FileReader fr=null;
+				BufferedReader br=null;
+				try {			
+					 fr=new FileReader(open.getDirectory()+open.getFile());
+					 br=new BufferedReader(fr);
+					String oneLine="";
+					ta.setText("");
+					while((oneLine=br.readLine()) != null ) {
+						ta.append(oneLine+"\n");
+					}
+					
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally {
+					try {
+						if(br !=null ) br.close();
+						if(fr !=null ) fr.close();
+					}catch(IOException e) {
+						
+					}
+				}
+			}
+		});
+		 
+		f.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
 		
-		CheckboxGroup cbg=new CheckboxGroup();
-		Checkbox checkBox1=new Checkbox("A", cbg, false);
-		Checkbox checkBox2=new Checkbox("B", cbg, false);
-		Checkbox checkBox3=new Checkbox("A", false);
-		Checkbox checkBox4=new Checkbox("B", false);
+					
+		b1.addActionListener(c -> chatMsg());
 		
-		WindowListener fHandler=new MyFrameHandler();
-		f.addWindowListener(fHandler);
+			
+		tf.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				chatMsg();
+				
+			}
+		});
 		
-		MyButtonHandler b1Handler=new MyButtonHandler();
-		b1Handler.setTextArea(ta);
-		b1Handler.setTextField(tf);
-		b1.addActionListener(b1Handler);
-		tf.addActionListener(b1Handler);
 
 		f.add(ta,BorderLayout.CENTER);
-		f.add(p1,BorderLayout.SOUTH);
-		f.add(p2,BorderLayout.EAST);
+		f.add(p,BorderLayout.SOUTH);
+		p.add(tf);
+		p.add(b1);
 		
-		p1.add(tf);
-		p1.add(b1);
-		p2.setLayout(new GridLayout(6, 1));
-		
-		p2.add(b2);
-		p2.add(b3);
-		p2.add(checkBox1);
-		p2.add(checkBox2);
-		p2.add(checkBox3);
-		p2.add(checkBox4);
-		
-		p1.setBackground(Color.gray);
-		p2.setBackground(Color.white);
-		
-		
+		p.setBackground(Color.gray);
 		
 		//Color bgColor=new Color(123,24,56);
 		f.setBackground(Color.GREEN);
@@ -59,4 +107,10 @@ public class ClientUI {
 		f.setVisible(true);
 	}
 
-}
+	public static void main(String[] args) {
+		ClientUI ui=new ClientUI();
+		ui.onCreate();
+	}//end main
+
+
+}//end ClientUi

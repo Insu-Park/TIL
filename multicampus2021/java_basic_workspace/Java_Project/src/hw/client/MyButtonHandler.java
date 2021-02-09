@@ -1,4 +1,4 @@
-package client;
+package hw.client;
 
 import java.awt.*;
 import java.awt.event.*;
