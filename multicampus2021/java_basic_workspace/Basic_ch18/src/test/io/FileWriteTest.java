@@ -8,7 +8,7 @@ public class FileWriteTest {
 	public static void main(String[] args) {
 		FileWriter fw=null;
 		try {
-			fw=new FileWriter("c:\\temp\\b.txt");
+			fw=new FileWriter("c:\\temp\\a.txt");
 			fw.write("lalala");
 			fw.write("hehehe");
 			
