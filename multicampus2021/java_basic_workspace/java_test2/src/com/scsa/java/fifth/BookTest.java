@@ -63,13 +63,13 @@ public class BookTest {
 		}
 		
 		try {
-			magazine[2] = new Magazine("75342", "Next Web", "편집부", "Jaen.kr", 10000, 2012, 10);
+			magazine[2] = new Magazine("75342", "Next Web", "편집부", "Jaen.kr", 10000, "AJAX 소개", 2012, 10);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			magazine[3] = new Magazine("76543", "Architecture", "편집부", "Jaen.kr", 5000, 2010, 3);
+			magazine[3] = new Magazine("76543", "Architecture", "편집부", "Jaen.kr", 5000, "java 시스템", 2010, 3);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

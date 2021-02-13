@@ -1,5 +1,14 @@
 package com.scsa.java.fifth;
 
+/* 
+ * 멀티캠퍼스 온·오프 연계 AI활용 지능형 서비스 개발
+ * 
+ * AI 서비스를 위한 기반 언어 프로그래밍 과제
+ * 
+ * 교육생 박인수  
+ * 
+ */
+
 public class BookTest {
 
 	public static void main(String[] args) {
