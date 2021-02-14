@@ -19,7 +19,7 @@ public class Book {
 	String desc = "";
 	
 	public String toString() {
-		return isbn + "\t| " + title + "\t| " + author + "\t| " + publisher + "\t| " + price + "\t| " + desc;
+		return isbn + "\t| " + title + "\t| " + author + "\t| " + publisher + "\t| " + price + " " + desc;
 	}
 	
 }

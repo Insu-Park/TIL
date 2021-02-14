@@ -21,7 +21,7 @@ public class BookTest {
 		// 과제에서 다른 클래스나 메소드를 추가하면 안될 것 같아 부득이하게 단순 코드 반복을 하였습니다. 
 		
 		try {
-			book[0] = new Book("21424", "Java Basic", "김하나", "Jaen.kr", 15000, "기본문법");
+			book[0] = new Book("21424", "Java Basic", "김하나", "Jaen.kr", 15000, "Java 기본문법");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
