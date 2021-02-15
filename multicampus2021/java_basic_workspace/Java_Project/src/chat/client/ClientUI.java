@@ -1,11 +1,16 @@
-package client;
+package chat.client;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ClientUI {
 	TextArea ta;
@@ -71,6 +76,32 @@ public class ClientUI {
 				}
 			}
 		});
+		
+		save_item.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent a) {
+				System.out.println(ta.getText());
+				FileDialog save=new FileDialog(f, "저장 창", FileDialog.SAVE);
+				save.setVisible(true);
+				
+				FileWriter fw = null;
+				
+				try {
+					fw = new FileWriter(save.getDirectory()+save.getFile());
+					fw.write(ta.getText());
+					
+				}catch (IOException e) {
+					e.printStackTrace();
+				}finally {
+					try {
+						if(fw != null) fw.close();
+					}catch(IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
 		 
 		f.addWindowListener(new WindowAdapter() {
 			@Override
@@ -80,8 +111,25 @@ public class ClientUI {
 		});
 		
 					
-		b1.addActionListener(c -> chatMsg());
-		
+		b1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// 채팅 서버 연결
+				String chatId=tf.getText();
+				ta.setText(chatId+"님 채팅을 시작합니다.");
+				try {
+					Socket s=new Socket("localhost", 9999);
+					ta.append("연결 ok\n");
+					DataOutputStream out=new DataOutputStream(s.getOutputStream());;
+					out.writeUTF("안녕?");
+				} catch (UnknownHostException e1){
+					e1.printStackTrace();
+				} catch(IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 			
 		tf.addActionListener(new ActionListener() {
 			
