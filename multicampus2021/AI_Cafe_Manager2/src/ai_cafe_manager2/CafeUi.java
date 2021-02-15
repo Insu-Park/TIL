@@ -243,6 +243,11 @@ public class CafeUi extends javax.swing.JFrame {
         jButton5.setBounds(270, 120, 50, 23);
 
         jButton6.setText("-");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jButton6);
         jButton6.setBounds(320, 120, 39, 23);
 
@@ -755,10 +760,14 @@ Hashtable<String,Integer> basket=new Hashtable();
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        System.out.println("^^");
+        jTextField3.setText(++count+"");
     }//GEN-LAST:event_jButton5ActionPerformed
 
- 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if(count>0) jTextField3.setText(--count+"");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    int count = 0;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
