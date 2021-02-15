@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,17 +14,22 @@ import java.net.UnknownHostException;
 public class ClientUI {
 	TextArea ta;
 	TextField tf;	
+	DataOutputStream out;
 	
 	public void chatMsg() {
 		String msg=tf.getText();
-		ta.append(msg+"\n");
+		try {
+			out.writeUTF(msg);
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}
 		tf.setText("");
 	}
 	
 	public void onCreate() {
 		Frame f=new Frame("나의 채팅");
 		Panel p=new Panel();
-		Button b1=new Button("전송1");
+		Button b1=new Button("채팅");
 		 tf=new TextField(20);
 		 ta=new TextArea();		
 		MenuBar mb=new MenuBar();
@@ -39,6 +43,34 @@ public class ClientUI {
 		mb.add(file_menu);
 		mb.add(edit_menu);
 		f.setMenuBar(mb);
+		
+		save_item.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				FileDialog save=new FileDialog(f, "저장 창", FileDialog.SAVE);
+				save.setVisible(true);
+				
+				FileWriter fw=null;
+				try {
+					fw=new FileWriter(save.getDirectory()+save.getFile());
+					fw.write(ta.getText());
+					
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally {
+					 try {
+						 if(fw !=null ) fw.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}		
+				
+			}
+		});
 		 
 		 
 		open_item.addActionListener(new ActionListener() {
@@ -76,32 +108,6 @@ public class ClientUI {
 				}
 			}
 		});
-		
-		save_item.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent a) {
-				System.out.println(ta.getText());
-				FileDialog save=new FileDialog(f, "저장 창", FileDialog.SAVE);
-				save.setVisible(true);
-				
-				FileWriter fw = null;
-				
-				try {
-					fw = new FileWriter(save.getDirectory()+save.getFile());
-					fw.write(ta.getText());
-					
-				}catch (IOException e) {
-					e.printStackTrace();
-				}finally {
-					try {
-						if(fw != null) fw.close();
-					}catch(IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		});
 		 
 		f.addWindowListener(new WindowAdapter() {
 			@Override
@@ -117,19 +123,20 @@ public class ClientUI {
 			public void actionPerformed(ActionEvent e) {
 				// 채팅 서버 연결
 				String chatId=tf.getText();
-				ta.setText(chatId+"님 채팅을 시작합니다.");
+				ta.setText(chatId+"님 채팅을 시작합니다\n");
 				try {
-					Socket s=new Socket("localhost", 9999);
+					Socket s=new Socket("localhost",9999);
 					ta.append("연결 ok\n");
-					DataOutputStream out=new DataOutputStream(s.getOutputStream());;
-					out.writeUTF("안녕?");
-				} catch (UnknownHostException e1){
+					out=new DataOutputStream(s.getOutputStream());
+				
+				} catch (UnknownHostException e1) {
 					e1.printStackTrace();
-				} catch(IOException e1) {
+				} catch (IOException e1) {					
 					e1.printStackTrace();
 				}
 			}
 		});
+		
 			
 		tf.addActionListener(new ActionListener() {
 			
@@ -159,6 +166,10 @@ public class ClientUI {
 		ClientUI ui=new ClientUI();
 		ui.onCreate();
 	}//end main
+	
+	
+	
+	
 
 
 }//end ClientUi
