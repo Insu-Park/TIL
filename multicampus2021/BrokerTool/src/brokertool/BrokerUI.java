@@ -6,6 +6,7 @@
 
 package brokertool;
 
+import java.awt.event.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,21 @@ public class BrokerUI extends javax.swing.JFrame {
      */
     public BrokerUI() {
         initComponents();
+        jButton2.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e){
+               int i=JOptionPane.showConfirmDialog(BrokerUI.this, "정말 삭제하시겠습니까?");
+                System.out.println(i);
+                switch(i){
+                    case 0:
+                        break;
+                    case 1:
+                    case 2:
+                    default:
+                }
+            }
+        });
     }
 
     /**
