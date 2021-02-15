@@ -2,24 +2,37 @@ package chat.client;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import java.io.*;
+import java.net.*;
 
 public class ClientUI {
 	TextArea ta;
 	TextField tf;	
 	DataOutputStream out;
+	DataInputStream in;
+	String chatId;
+	
+	class ClientThread extends Thread{
+		@Override
+		public void run() {
+			while(true) {
+				try {
+				
+					ta.append(in.readUTF()+"\n");//채팅 메세지 읽기
+				
+				} catch (IOException e) {				
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	
 	
 	public void chatMsg() {
 		String msg=tf.getText();
 		try {
-			out.writeUTF(msg);
+			out.writeUTF(chatId+msg);//채팅 메세지 보내기 [은수]안녕?
 		} catch (IOException e) {			
 			e.printStackTrace();
 		}
@@ -122,12 +135,16 @@ public class ClientUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// 채팅 서버 연결
-				String chatId=tf.getText();
+				chatId="["+tf.getText()+"]";//[은수]
 				ta.setText(chatId+"님 채팅을 시작합니다\n");
 				try {
 					Socket s=new Socket("localhost",9999);
-					ta.append("연결 ok\n");
 					out=new DataOutputStream(s.getOutputStream());
+					in=new DataInputStream(s.getInputStream());
+					ClientThread t=new ClientThread();
+					t.start();
+					ta.append("연결 ok\n");
+					tf.setText("");
 				
 				} catch (UnknownHostException e1) {
 					e1.printStackTrace();
