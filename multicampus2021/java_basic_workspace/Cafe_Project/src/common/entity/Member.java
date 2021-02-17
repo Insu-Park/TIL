@@ -3,22 +3,26 @@ package common.entity;
 import java.util.Date;
 
 public class Member {
-
 	private String memId;
 	private String name;
 	private Date mDate;
 	private String phone;
-	private int point;
+	private int point=0;
+	
+	
 	
 	public Member() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Member(String memId, String name, Date mDate, String phone) {
+		super();
 		this.memId = memId;
 		this.name = name;
 		this.mDate = mDate;
 		this.phone = phone;
+		
 	}
 	
 	public String getMemId() {
@@ -55,10 +59,14 @@ public class Member {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Member [memId=" + memId + ", name=" + name + ", mDate=" + mDate + ", phone=" + phone + ", point="
 				+ point + "]";
 	}
+	
+	
+	
+
 }
