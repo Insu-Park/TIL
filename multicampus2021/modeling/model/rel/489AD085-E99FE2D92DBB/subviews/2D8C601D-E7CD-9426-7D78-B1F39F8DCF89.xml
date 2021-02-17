@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_1" id="2D8C601D-E7CD-9426-7D78-B1F39F8DCF89">
+<createdBy>lapil</createdBy>
+<modifiedBy>lapil</modifiedBy>
+<createdTime>2021-02-16 06:17:20 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="14B50E0A-95FC-CF9B-2C11-F28D038C5D53" otype="Table" vid="66DD074F-AAB9-0087-2F9D-0184C1DEE2AA">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="142" y="138" width="173" height="110"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="27E8B5BB-701A-8369-432A-468DE3B49FD8" otype="Table" vid="B424CD7A-7BD5-ECA2-C077-C496B78E2E68">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="409" y="321" width="214" height="144"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="4038D9F3-E1E9-5B16-F683-00B16775A2F8" otype="Table" vid="426B163F-34D8-7423-C5D0-0876E92AF83C">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="134" y="321" width="237" height="114"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="FFFEDD06-0F83-4FBB-5B4E-6CDCF026415A" otype="Table" vid="C5430BC5-EBB7-BADF-A2DC-7CA8569E795C">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="400" y="140" width="233" height="144"/>
+</OView>
+</objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="D078B4C0-C965-6FDF-6346-599F9400E636" otype="FKIndexAssociation" vid_source="66DD074F-AAB9-0087-2F9D-0184C1DEE2AA" vid_target="C5430BC5-EBB7-BADF-A2DC-7CA8569E795C">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<lineWidth>1</lineWidth>
+<points>
+<point x="315" y="194"/>
+<point x="400" y="194"/>
+</points>
+</Connector>
+</connectors>
+</Diagram>

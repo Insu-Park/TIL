@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="buyTBL" directorySegmentName="seg_0" id="FFFEDD06-0F83-4FBB-5B4E-6CDCF026415A">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="userTBL_userName" id="1AA63681-92BC-B319-E418-0B7338872D23">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="prodName" id="3EC2BD2D-BD60-BDD7-D9B2-CF535EBDC0AD">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="userName" id="5D620F0E-2C40-2B00-7C2F-21872E8C3886">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="amount" id="BF23D1B4-4670-5945-4001-789741964F9A">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="price" id="E3574269-BFA4-4A50-AB9A-D8A76FCF8EF8">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="buyTBL_userTBL_FK" id="1048246F-0CA1-EB95-C88A-4172278D5378">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="buyTBL_PK" id="9152E1CC-0819-DEAC-B887-6A77D7FFD86B">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

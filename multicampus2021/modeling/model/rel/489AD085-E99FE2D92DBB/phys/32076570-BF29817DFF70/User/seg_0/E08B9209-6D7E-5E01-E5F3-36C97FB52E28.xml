@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="SHOP" directorySegmentName="seg_0" id="E08B9209-6D7E-5E01-E5F3-36C97FB52E28">
+<sourceConnName>로컬-SHOP</sourceConnName>
+<sourceObjName>SHOP</sourceObjName>
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:35:49 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46</schemaObject>
+</UserOraclev10g>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PRODUCTTBL" directorySegmentName="seg_0" id="27E8B5BB-701A-8369-432A-468DE3B49FD8">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>660F2ADD-FC77-AD48-7C19-C30A0264486C</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="AMOUNT" id="B45D28C2-B9F0-0ADA-3147-091DAF62F51D">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COST" id="B84DA4FC-F6B3-93E1-CBBA-02015A8CBFD8">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMPANY" id="C9143E77-7504-28A7-3AFA-44C7B62C43CC">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCTNAME" id="E8538A75-5562-D37A-2474-C0121110F86C">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MAKEDATE" id="F79305BF-578E-307F-A30F-08A55A23E298">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PRODUCTTBL_PK" id="E6B8CA5D-452A-0E0A-3125-7A8C5E5CD223">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46</schemaObject>
+<segment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PRODUCTTBL_PK" id="9F367882-DA09-5338-3C5E-A3F926F5FBF0">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<segment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+<existingIndex>E6B8CA5D-452A-0E0A-3125-7A8C5E5CD223</existingIndex>
+<indexSegment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

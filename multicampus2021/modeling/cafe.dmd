@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="cafe" id="EFC0F6AA-32B4-02BD-D6A9-4EA91B2AA045" version="3.5">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:21:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>EFC0F6AA-32B4-02BD-D6A9-4EA91B2AA045</designId>
+</OSDM_Design>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="model" id="2CB19847-9255-0396-70BC-A5AC5544F452" version="3.5">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:16:02 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>2CB19847-9255-0396-70BC-A5AC5544F452</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="53549969-59DF-66A0-3065-EEE8145CCF68">
+<designStoragePath>C:\Users\lapil\TIL\multicampus2021\modeling</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

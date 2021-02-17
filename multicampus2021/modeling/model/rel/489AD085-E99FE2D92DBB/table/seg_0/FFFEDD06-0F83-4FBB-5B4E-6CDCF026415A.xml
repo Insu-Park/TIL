@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFFEDD06-0F83-4FBB-5B4E-6CDCF026415A" name="buyTBL">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:21:58 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="userName" id="5D620F0E-2C40-2B00-7C2F-21872E8C3886">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prodName" id="3EC2BD2D-BD60-BDD7-D9B2-CF535EBDC0AD">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="E3574269-BFA4-4A50-AB9A-D8A76FCF8EF8">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="amount" id="BF23D1B4-4670-5945-4001-789741964F9A">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="userTBL_userName" id="1AA63681-92BC-B319-E418-0B7338872D23">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D078B4C0-C965-6FDF-6346-599F9400E636" referredColumn="79D637E6-CB3E-ED2B-17F5-5AE59E4A409C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9152E1CC-0819-DEAC-B887-6A77D7FFD86B" name="buyTBL_PK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D620F0E-2C40-2B00-7C2F-21872E8C3886"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1048246F-0CA1-EB95-C88A-4172278D5378" name="buyTBL_userTBL_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AA63681-92BC-B319-E418-0B7338872D23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

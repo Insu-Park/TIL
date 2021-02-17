@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="SHOP" directorySegmentName="seg_0" id="7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>0522AF25-6766-E8C8-C5D9-557AF1F4146A</importedID>
+</SchemaObject>

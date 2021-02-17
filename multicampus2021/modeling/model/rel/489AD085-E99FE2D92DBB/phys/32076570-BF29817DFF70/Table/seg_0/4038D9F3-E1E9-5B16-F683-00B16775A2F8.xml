@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MEMBERTBL" directorySegmentName="seg_0" id="4038D9F3-E1E9-5B16-F683-00B16775A2F8">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>660F2ADD-FC77-AD48-7C19-C30A0264486C</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="COLUMN1" id="161CA2CE-51C8-9E09-F3BB-A82C459C14BD">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEMBERADDRESS" id="5246A1EF-F731-B670-BB96-07AA597435A9">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEMBERID" id="9BFD7AE1-7448-CA7C-7D22-E2F677E50EDA">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="MEMERTBL_PK" id="9C54C793-8049-A72B-6034-69DDAD970A46">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>7021AF6E-7C6E-ACEE-81DA-CF3A0675AC46</schemaObject>
+<segment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MEMERTBL_PK" id="69217081-82E7-2205-D864-2B23FF959A0A">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:36:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<segment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</segment>
+<tableSpace>0AF4EE4C-7328-E2AF-A600-76C3840AECE8</tableSpace>
+<existingIndex>9C54C793-8049-A72B-6034-69DDAD970A46</existingIndex>
+<indexSegment>C2827E3F-E59B-5775-AFC3-6DFD0A67A12F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

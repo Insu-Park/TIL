@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="userTBL" directorySegmentName="seg_0" id="14B50E0A-95FC-CF9B-2C11-F28D038C5D53">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="mobile" id="038516E7-4964-AB77-DCF5-A69C984479DE">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="birthYear" id="412B85CA-67E1-36CA-8B9F-C80EA887B907">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="addr" id="5E894D75-67D9-DCA3-4C0B-C519C44537AC">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="userName" id="79D637E6-CB3E-ED2B-17F5-5AE59E4A409C">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="userTBL_PK" id="311A13A8-811B-F9C0-82F1-79FD1BA46EE7">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-16 06:23:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

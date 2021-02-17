@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="15D6E759-177C-22FA-B88A-ABDA8FD3B67F" mainViewID="2CBCE598-9A5E-E68F-5CEB-B60F036F49A9">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:21:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>
