@@ -1,6 +1,6 @@
 package test;
 import java.sql.*;
-public class InsertTest {
+public class DeleteTest {
 	public static void main(String[] args) {	
 		Connection con=null;
 		PreparedStatement stmt=null;
@@ -16,21 +16,16 @@ public class InsertTest {
 			System.out.println("con ok");
 			
 			//3.Statement 생성
-			 stmt=con.prepareStatement("insert into member(memid,memname,memdate,phone,point) values(?,?,?,?,?)");
-			 stmt.setString(1,args[0]);
-			 stmt.setString(2,args[1]);
-			 java.util.Date today=new java.util.Date();			 
-			 Date now=new Date(today.getTime());
-			 stmt.setDate(3, now);
-			 stmt.setString(4,args[2]);
-			 stmt.setInt(5, 0);
+			 stmt=con.prepareStatement("delete from member where memid=?");
+			 stmt.setString(1,args[0]);//id	 
+			 
 			
 			//4.SQL전송
 			 int i=stmt.executeUpdate();
 			 
 			
 			//5.결과 얻기
-			 System.out.println(i+"행이 insert되었습니다");	
+			 System.out.println(i+"행이 delete되었습니다");	
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

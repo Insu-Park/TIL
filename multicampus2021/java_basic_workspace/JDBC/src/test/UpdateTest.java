@@ -1,6 +1,6 @@
 package test;
 import java.sql.*;
-public class InsertTest {
+public class UpdateTest {
 	public static void main(String[] args) {	
 		Connection con=null;
 		PreparedStatement stmt=null;
@@ -12,18 +12,14 @@ public class InsertTest {
 			System.out.println("driver ok");
 			
 			//2.연결
-			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","cafe","1234");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","Shop","1234");
 			System.out.println("con ok");
 			
 			//3.Statement 생성
-			 stmt=con.prepareStatement("insert into member(memid,memname,memdate,phone,point) values(?,?,?,?,?)");
-			 stmt.setString(1,args[0]);
-			 stmt.setString(2,args[1]);
-			 java.util.Date today=new java.util.Date();			 
-			 Date now=new Date(today.getTime());
-			 stmt.setDate(3, now);
-			 stmt.setString(4,args[2]);
-			 stmt.setInt(5, 0);
+			 stmt=con.prepareStatement("update membertbl set memberaddress=? where memberid=?");
+			 stmt.setString(1,args[1]);//서울 구로구 대림동
+			 stmt.setString(2,args[0]);//Kim
+			 
 			
 			//4.SQL전송
 			 int i=stmt.executeUpdate();
