@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFB2E901-9322-9314-60D6-22E3D4DA916C" name="주문항목">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:46:42 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="주문번호" id="29263ED3-6EE1-10B2-68E4-D8F41EF02576">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:47:08 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E3DBAEB-7B34-0C70-1074-11080790917E" referredColumn="FE0DF551-25F5-8458-1C39-A3983AE3645E"/>
+</associations>
+</Column>
+<Column name="완제품번호" id="6BEE750A-A801-00A1-3A82-D7595A917C08">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:47:21 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F56810D-61A9-0038-1C66-71F6A024FCA9" referredColumn="36030E25-C8CE-B000-7F91-CA1082FB7553"/>
+</associations>
+</Column>
+<Column name="주문수량" id="825C6CD6-1042-BD75-49F4-DE931E468DE7">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:47:01 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8ADCBD09-967B-2E87-906D-6E4DB2A8004B" name="주문항목_주문_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:47:08 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29263ED3-6EE1-10B2-68E4-D8F41EF02576"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01B283AE-3E3F-239F-CEB1-AC6A5727B94F" name="주문항목_완제품_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:47:21 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BEE750A-A801-00A1-3A82-D7595A917C08"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

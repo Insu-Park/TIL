@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4EE13185-F3A7-2EEB-DCB4-3A7B2A7399FF" name="직원">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:35:34 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="직원번호" id="5CA290BB-0B96-2D78-B4BB-7772FDC7AD94">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:35:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="이름" id="20C77C63-4F5F-3A28-1792-97157790C6FD">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:36:13 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="전화번호" id="AF82B3A9-59F5-4A90-40A9-533817C7346E">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="입사일" id="3858F6B3-D2B6-5EE1-3A4A-D6844675D1CA">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="근무차트" id="5F7C43B5-1089-5587-FFAA-3B0683A4F40D">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="계좌번호" id="96C68E5E-B830-8B3C-9CE5-E4FB73E55485">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="출근시간" id="0865B7B2-8AFD-4AE5-7F6C-A452208A290E">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="퇴근시간" id="189D4C52-4624-4FD7-5CC6-6D66FA7FA6EE">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="직급" id="B5FECEB1-9F50-80B2-7C97-C7845BE48673">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="은행" id="A1DB617D-05CB-4A94-B426-4D08109AE4F1">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="월급" id="A3EC52C6-D4D4-5BF1-5226-F0A6F2AA39E7">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="퇴사여부" id="353EEBF5-FA01-A5C0-A9BC-198908B5BBFA">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:37:09 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2CCD3B8A-6E34-D573-2B83-5D70B3DF6CA3" name="직원_PK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:36:13 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CA290BB-0B96-2D78-B4BB-7772FDC7AD94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

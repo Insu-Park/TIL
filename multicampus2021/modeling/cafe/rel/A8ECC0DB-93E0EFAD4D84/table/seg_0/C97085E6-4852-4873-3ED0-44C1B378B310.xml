@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C97085E6-4852-4873-3ED0-44C1B378B310" name="완제품">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:45:40 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="완제품번호" id="36030E25-C8CE-B000-7F91-CA1082FB7553">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:46:35 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="제품이름" id="8F1CAF7F-6500-D0BF-0BBF-A4264B1D1C0E">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:46:35 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="판매가격" id="503AAFCA-6164-D3C4-563B-908EB054C645">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:46:35 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E5A1E300-4E33-EB8D-AEA8-713AF05EF4DD" name="완제품_PK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:46:35 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36030E25-C8CE-B000-7F91-CA1082FB7553"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

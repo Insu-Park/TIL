@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F99A918B-4DC0-8B2D-57A5-9F74762CE1E5" name="주문">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:33:15 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="주문번호" id="FE0DF551-25F5-8458-1C39-A3983AE3645E">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:34:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="주문일자" id="6241845A-9AB8-43FC-57C5-ADB660739811">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:34:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="주문수단" id="61FEE36E-2792-53A1-FD21-6F1ACB0DB160">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:34:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객번호" id="4B26D100-3301-69A0-BE18-5BCDED13018F">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:42:00 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B338E5A8-9AFB-1868-3BB5-4E90B2BA4115" referredColumn="FD015717-12C7-9F8B-86F7-008B62981989"/>
+</associations>
+</Column>
+<Column name="직원번호" id="D28C1389-C3D9-56F6-042E-8FC9CDBD709C">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:43:12 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50AC05BD-9706-EEA7-3873-2CDE13DECBD2" referredColumn="5CA290BB-0B96-2D78-B4BB-7772FDC7AD94"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2B74A4A5-7481-62EC-15FE-7A79C0CA2DD8" name="주문_PK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:35:05 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE0DF551-25F5-8458-1C39-A3983AE3645E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC4D765B-6FD5-9242-6FEC-F7AA2014DC71" name="주문_고객_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:42:00 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B26D100-3301-69A0-BE18-5BCDED13018F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC7F2B60-D1A7-8DBE-CB63-AD6BE616A1C5" name="주문_직원_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:43:12 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D28C1389-C3D9-56F6-042E-8FC9CDBD709C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

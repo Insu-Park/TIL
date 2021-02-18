@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45ADA17C-8DB4-37C2-7452-723D8CB6ABFB" name="고객">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:26:24 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="고객번호" id="FD015717-12C7-9F8B-86F7-008B62981989">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:29:53 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="이름" id="65C96EE2-E32F-8856-51AA-3F51EDAF6CA0">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:29:53 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="기념일" id="71494D79-4E5E-7F06-C04E-902A88C74C02">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:30:33 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="연락처" id="DEF660C2-421F-8DB9-4E3E-33232DA575EE">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:31:26 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="누적포인트" id="CEE07D52-678C-4F56-84EC-F3DBA50B83E4">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:31:26 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="30FFEFD9-7875-B029-9D14-9ABCA7E35BBB" name="고객_PK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:30:48 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD015717-12C7-9F8B-86F7-008B62981989"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

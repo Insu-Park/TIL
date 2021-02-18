@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D087E19C-445C-093F-5124-D36F6E0F9C9E" containerWithKeyObject="A8F3E469-42C2-5B44-AFCB-904A75BF7A0A" localFKIndex="93799824-E250-CDEE-418A-26B5BBDC8D1A" name="구매항목_구매주문_FK">
+<createdBy>lapil</createdBy>
+<createdTime>2021-02-17 05:51:45 UTC</createdTime>
+<ownerDesignName>cafe</ownerDesignName>
+<referredTableLongName>구매주문</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>265C3695-B1F6-8D39-C90C-5186663B55B9</referredTableID>
+<keyObject>0008A543-4D9E-7B99-CEF4-E6CDE70CAA40</keyObject>
+<referredKeyID>0008A543-4D9E-7B99-CEF4-E6CDE70CAA40</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>구매번호</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
