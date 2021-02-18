@@ -23,7 +23,7 @@
 
 * Java AWT를 이용해 Cafe Project를 만들고, 프로그램과 데이터베이스를 연동했다.
   * Connection, PreparedStatement등 DB연동과 관련된 클래스를 학습하였다.
-  * EventListener에 select, Insert 등의 기능을 추가하였다.
+  * DAO 클래스에 대해 배우고 프로그램에 select, insert 등의 기능을 추가하였다.
 
   
 
