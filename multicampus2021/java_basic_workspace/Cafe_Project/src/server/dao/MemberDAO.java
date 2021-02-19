@@ -3,7 +3,7 @@ package server.dao;
 import java.sql.*;
 import java.util.ArrayList;
 
-import common.entity.Member;
+import common.entity.MemberDTO;
 import common.util.CafeException;
 
 public class MemberDAO {
@@ -17,12 +17,12 @@ public class MemberDAO {
 		
 	}
 	
-	public void insertMember(Member m) throws CafeException {
+	public void insertMember(MemberDTO m) throws CafeException {
 		Connection con=null;
 		PreparedStatement stmt=null;
 		
 		try {			
-			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","cafe","1234");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","CAFE","1234");
 			stmt=con.prepareStatement("insert into member values(?,?,?,?,?)");
 			stmt.setString(1, m.getMemId());
 			stmt.setString(2, m.getName());
@@ -46,7 +46,7 @@ public class MemberDAO {
 		}		
 	}
 	
-	public ArrayList<Member> selectMember() throws CafeException {
+	public ArrayList<MemberDTO> selectMember() throws CafeException {
 		Connection con=null;
 		PreparedStatement stmt=null;
 		
@@ -54,14 +54,14 @@ public class MemberDAO {
 			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","cafe","1234");
 			stmt=con.prepareStatement("select * from member");			
 			ResultSet rs=stmt.executeQuery();
-			ArrayList<Member> list=new ArrayList<Member>();
+			ArrayList<MemberDTO> list=new ArrayList<MemberDTO>();
 			while(rs.next()) {
 				String id=rs.getString(1);
 				String name=rs.getString(2);
 				Date mDate=rs.getDate(3);
 				String phone=rs.getString(4);
 				int point =rs.getInt(5);
-				Member m=new Member(id, name, mDate, phone, point);
+				MemberDTO m=new MemberDTO(id, name, mDate, phone, point);
 				list.add(m);
 			}
 			return list;

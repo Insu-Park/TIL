@@ -2,7 +2,7 @@ package common.entity;
 
 import java.util.Date;
 
-public class Member {
+public class MemberDTO {
 	private String memId;
 	private String name;
 	private Date mDate;
@@ -11,12 +11,12 @@ public class Member {
 	
 	
 	
-	public Member() {
+	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Member(String memId, String name, Date mDate, String phone) {
+	public MemberDTO(String memId, String name, Date mDate, String phone) {
 		super();
 		setMemId(memId);
 		setName(name);
@@ -24,7 +24,7 @@ public class Member {
 		setPhone(phone);		
 	}
 	
-	public Member(String memId, String name, Date mDate, String phone,int point) {
+	public MemberDTO(String memId, String name, Date mDate, String phone,int point) {
 		super();
 		setMemId(memId);
 		setName(name);
