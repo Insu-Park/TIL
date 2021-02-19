@@ -18,11 +18,19 @@ public class Member {
 
 	public Member(String memId, String name, Date mDate, String phone) {
 		super();
-		this.memId = memId;
-		this.name = name;
-		this.mDate = mDate;
-		this.phone = phone;
-		
+		setMemId(memId);
+		setName(name);
+		setmDate(mDate);
+		setPhone(phone);		
+	}
+	
+	public Member(String memId, String name, Date mDate, String phone,int point) {
+		super();
+		setMemId(memId);
+		setName(name);
+		setmDate(mDate);
+		setPhone(phone);	
+		setPoint(point);
 	}
 	
 	public String getMemId() {

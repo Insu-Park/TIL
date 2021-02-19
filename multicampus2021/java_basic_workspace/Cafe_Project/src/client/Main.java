@@ -8,6 +8,8 @@ public class Main {
 		
 		CafeUi ui=new CafeUi();
 		ui.setVisible(true);
+		
+
 	}
 
 }

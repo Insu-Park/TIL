@@ -1,8 +1,8 @@
-
 package client.ui;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
@@ -14,10 +14,14 @@ import server.service.MemberService;
 
 public class CafeUi extends Frame{
 	
+	MemberService mservice;
+	
 	TextField tf_memId, tf_memName,tf_phone,tf_prodCode,tf_prodName,tf_prodPrice,tf_orderMem,tf_orderProd,tf_orderQuan;
 	Button btn_memInsert,btn_memUpdate,btn_memSelect,btn_memDelete,btn_prodInsert,btn_prodUpdate,btn_prodSelect,btn_prodDelete;
 	Button btn_order;
 	TextArea ta_mem,ta_prod,ta_order;
+	
+	
 			
 	@Override
 	public void setVisible(boolean b) {
@@ -36,9 +40,24 @@ public class CafeUi extends Frame{
 		setLocation(200,200);
 		pack();
 		eventProcess();
+		setData();
 		super.setVisible(b);
 	}
 	
+	private void setData() {
+		// 화면 뜨자마자 모든 고객 리스트가 보이게
+		try {
+			mservice=new MemberService();
+			ArrayList<Member> list=mservice.selectMember();
+			for(Member m:list) {
+				ta_mem.append(m.getMemId()+"\t"+m.getName()+"\t"+m.getmDate()+"\t"+m.getPhone()+"\t"+m.getPoint()+"\n");
+			}
+		} catch (CafeException e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
+		
+	}
+
 	private void ordersPanel() {
 		Panel orderPanel=new Panel();
 		Panel orderPanel_sub1=new Panel();
@@ -167,6 +186,7 @@ public class CafeUi extends Frame{
 
 	private void eventProcess() {
 		
+				
 		btn_memSelect.addActionListener(new ActionListener() {
 			
 			@Override
@@ -189,7 +209,8 @@ public class CafeUi extends Frame{
 				Member m=new Member(memId,memName,now,phone);
 				System.out.println(m);
 				try {
-					MemberService mservice=new MemberService();
+					
+					mservice.insertMember(m);
 					JOptionPane.showMessageDialog(CafeUi.this, "가입 되셨습니다.");
 				} catch (CafeException e1) {
 					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
