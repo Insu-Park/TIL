@@ -22,7 +22,7 @@ public class MemberDAO {
 		PreparedStatement stmt=null;
 		
 		try {			
-			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","CAFE","1234");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","cafe","1234");
 			stmt=con.prepareStatement("insert into member values(?,?,?,?,?)");
 			stmt.setString(1, m.getMemId());
 			stmt.setString(2, m.getName());
@@ -84,6 +84,37 @@ public class MemberDAO {
 	}
 	
 	public void deleteMember() {
+		
+	}
+
+	public String selectMember(String memId) throws CafeException {
+		Connection con=null;
+		PreparedStatement stmt=null;
+		
+		try {			
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","cafe","1234");
+			stmt=con.prepareStatement("select memName from member where memId=?");	
+			stmt.setString(1,memId);
+			ResultSet rs=stmt.executeQuery();
+			
+			if(rs.next()) {
+				return rs.getString(1);
+			}else {
+				return null;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CafeException("selectMember 실패");
+		} finally {
+			try {
+				if(stmt!=null) stmt.close();
+				if(con !=null) con.close();
+			} catch (SQLException e) {
+				
+			}
+			
+		}	
 		
 	}
 

@@ -8,16 +8,20 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 import common.entity.MemberDTO;
+import common.entity.OrderDTO;
 import common.entity.ProductDTO;
 import common.util.CafeException;
 import server.service.MemberService;
+import server.service.OrderService;
 import server.service.ProductService;
 
 
 public class CafeUi extends Frame{
 	
-	MemberService mService;
+	MemberService mservice;
 	ProductService pService;
+	OrderService oService;
+	
 	TextField tf_memId, tf_memName,tf_phone,tf_prodCode,tf_prodName,tf_prodPrice,tf_orderMem,tf_orderProd,tf_orderQuan;
 	Button btn_memInsert,btn_memUpdate,btn_memSelect,btn_memDelete,btn_prodInsert,btn_prodUpdate,btn_prodSelect,btn_prodDelete;
 	Button btn_order;
@@ -28,10 +32,11 @@ public class CafeUi extends Frame{
 	@Override
 	public void setVisible(boolean b) {
 		try {
-			mService=new MemberService();
-			pService=new ProductService();
+			mservice=new MemberService();
+			pService = new ProductService();
+			oService=new OrderService();
 		} catch (CafeException e1) {
-			System.out.println(e1.getMessage() + "시스템 종료");
+			System.out.println(e1.getMessage()+"시스템 종료");
 			System.exit(0);
 		}
 		
@@ -55,10 +60,24 @@ public class CafeUi extends Frame{
 		super.setVisible(b);
 	}
 	
+	private void setProductList() {
+		try {
+			ArrayList<ProductDTO> list=pService.selectProduct();
+			ta_prod.setText("");
+			for(ProductDTO p:list) {
+				ta_prod.append(p.getProdCode()+"\t"+p.getProdName()+"\t"+p.getPrice()+"\n");
+			}
+		} catch (CafeException e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
+		
+	}
+
 	private void setMemberList() {
 		// 화면 뜨자마자 모든 고객 리스트가 보이게
 		try {
-			ArrayList<MemberDTO> list=mService.selectMember();
+			
+			ArrayList<MemberDTO> list=mservice.selectMember();
 			ta_mem.setText("");
 			for(MemberDTO m:list) {
 				ta_mem.append(m.getMemId()+"\t"+m.getName()+"\t"+m.getmDate()+"\t"+m.getPhone()+"\t"+m.getPoint()+"\n");
@@ -67,19 +86,6 @@ public class CafeUi extends Frame{
 			JOptionPane.showMessageDialog(this, e.getMessage());
 		}
 		
-	}
-	
-	private void setProductList() {
-		// 화면 뜨자마자 모든 물품 리스트가 보이게
-				try {
-					ArrayList<ProductDTO> list=pService.selectProduct();
-					ta_prod.setText("");
-					for(ProductDTO p:list) {
-						ta_prod.append(p.getProdCode()+"\t"+p.getProdName()+"\t"+p.getPrice());
-					}
-				} catch (CafeException e) {
-					JOptionPane.showMessageDialog(this, e.getMessage());
-				}
 	}
 
 	private void ordersPanel() {
@@ -210,14 +216,83 @@ public class CafeUi extends Frame{
 
 	private void eventProcess() {
 		
+		//주문
+		btn_order.addActionListener(e->{
+			String memId=tf_memId.getText();
+			String prodCode=tf_prodCode.getText();
+			int quantity=Integer.parseInt(tf_orderQuan.getText());
+			OrderDTO o=new OrderDTO(quantity, memId, prodCode, "kiosk");
+			try {
+				int orderNo=oService.insertOrder(o);
+				if(orderNo>0) {
+					JOptionPane.showMessageDialog(CafeUi.this, "주문 완료 : 주문번호 [ "+orderNo+" ] ");
+				}else {
+					JOptionPane.showMessageDialog(CafeUi.this, "죄송합니다. 다시 주문 해주세요");
+				}
+			} catch (CafeException e1) {
+				JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
+			}
+		});
+		
+		//상품조회
+		btn_prodSelect.addActionListener(e-> { //람다식
+				String prodCode=tf_prodCode.getText();
+				try {
+					String prodName=pService.selectProduct(prodCode);
+					if(prodName==null) {
+						JOptionPane.showMessageDialog(CafeUi.this, "상품 코드를 확인해 주세요");
+					}else {
+						tf_orderProd.setText(prodName);
+					}
+				} catch (CafeException e1) {
+					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
+				}
 				
+			}
+		);
+		
+		
+		//상품 등록
+		btn_prodInsert.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String prodCode=tf_prodCode.getText();
+				String prodName=tf_prodName.getText();
+				int price=Integer.parseInt(tf_prodPrice.getText());
+				ProductDTO p=new ProductDTO(prodCode, prodName, price);
+				
+				try {
+					
+					pService.insertProduct(p);
+					setProductList();
+					JOptionPane.showMessageDialog(CafeUi.this, "상품 등록 완료");
+				} catch (CafeException e1) {
+					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
+				}
+				
+				
+			}
+		});
+		
+		// 고객 조회		
 		btn_memSelect.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// 조회
+				
 				String memId= tf_memId.getText();
-				JOptionPane.showMessageDialog(CafeUi.this, memId+"님 조회 되셨습니다.");
+				try {
+					String memName=mservice.selectMember(memId);
+					if(memName==null) {
+						JOptionPane.showMessageDialog(CafeUi.this, "고객 ID를 확인해 주세요");
+					}else {
+						tf_orderMem.setText(memName);
+					}
+				} catch (CafeException e1) {
+					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
+				}
+				
 			}
 		});
 		
@@ -234,41 +309,12 @@ public class CafeUi extends Frame{
 				System.out.println(m);
 				try {
 					
-					mService.insertMember(m);
-					JOptionPane.showMessageDialog(CafeUi.this, "가입 되셨습니다.");
+					mservice.insertMember(m);
 					setMemberList();
-				} catch (CafeException e1) {
-					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
-				}
-				
-			}
-		});
-		
-		btn_prodSelect.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// 조회
-				String prodId= tf_prodCode.getText();
-				JOptionPane.showMessageDialog(CafeUi.this, prodId+"가 조회 되었습니다.");
-			}
-		});
-		
-		btn_prodInsert.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// 가입
-				String prodCode= tf_prodCode.getText();
-				String prodName=tf_prodName.getText();
-				int prodPrice=Integer.parseInt(tf_prodPrice.getText());
-				Date now=new Date();
-				ProductDTO p=new ProductDTO(prodCode, prodName, prodPrice);
-				System.out.println(p);
-				try {
-					
-					pService.insertProduct(p);
-					JOptionPane.showMessageDialog(CafeUi.this, "입력했습니다.");
+					tf_memId.setText("");
+					tf_memName.setText("");
+					tf_phone.setText("");
+					JOptionPane.showMessageDialog(CafeUi.this, "가입 되셨습니다.");
 				} catch (CafeException e1) {
 					JOptionPane.showMessageDialog(CafeUi.this, e1.getMessage());
 				}

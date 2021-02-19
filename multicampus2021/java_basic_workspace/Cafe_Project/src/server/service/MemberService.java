@@ -23,4 +23,9 @@ public class MemberService {
 		return mdao.selectMember();		
 	}
 
+	public String selectMember(String memId) throws CafeException {
+		return mdao.selectMember(memId);
+		
+	}
+
 }
