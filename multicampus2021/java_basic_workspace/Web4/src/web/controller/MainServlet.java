@@ -2,6 +2,7 @@ package web.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -54,6 +55,27 @@ public class MainServlet extends HttpServlet {
 		request.setAttribute("id", id);
 		request.setAttribute("pw", pw);
 		rd.forward(request, response);
+	}
+	
+	private void process(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("utf-8");
+		String name=request.getParameter("name");
+		String email=request.getParameter("email");
+		String pw=request.getParameter("pw");
+		String pw2=request.getParameter("pw2");
+		String mobile=request.getParameter("mobile");
+		String tel=request.getParameter("tel");
+		String agree=request.getParameter("agree");
+		System.out.println(name);
+		System.out.println(email);
+		System.out.println(pw);
+		System.out.println(pw2);
+		System.out.println(mobile);
+		System.out.println(tel);
+		System.out.println(agree);
+		
+		R
+
 	}
 
 }
