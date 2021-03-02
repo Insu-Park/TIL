@@ -74,7 +74,7 @@ public class MainServlet extends HttpServlet {
 		System.out.println(tel);
 		System.out.println(agree);
 		
-		R
+		
 
 	}
 
