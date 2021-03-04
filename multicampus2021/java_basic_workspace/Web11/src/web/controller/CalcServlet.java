@@ -32,4 +32,8 @@ public class CalcServlet extends HttpServlet {
 		
 	}
 
+	protected String calculate(float won, String op) {
+	
+		return op;
+	}
 }
