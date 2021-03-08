@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(document).ready(function (){
+		
+	});
+	function fn_process(){
+		var id=$("#id").val();
+		var pw=$("#pw").val();
+		alert(id+":"+pw);
+		$.ajax({
+			type:"get",
+			dataType:"text",
+			async:false,
+			url:"main",
+			data:{sign:"login",id:id,pw:pw},
+			success: function(okMsg,status){
+				alert("success: "+okMsg+"\t status:"+status);				
+			},
+			error: function(errMsg,status){
+				alert("success: "+errMsg+"\t status:"+status);
+			},
+			complete:function(){
+				alert("작업을 완료했습니다");
+			}
+		});
+	}
+</script>
+</head>
+<body>		
+		ID<input name="id" id="id"><br>
+		PW<input id="pw" type="password" name="pw"><br>
+		<input type="button" value="로그인" onclick="fn_process()">
+	
+</html>
