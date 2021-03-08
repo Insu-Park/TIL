@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${id }님 환영합니다.
+	${id }님 로그인 되셨습니다.
 	<form action="main">
 		<input type="hidden" name="sign" value="logout">
 		<input type="submit" value="로그아웃">
@@ -20,6 +20,5 @@
 		세탁기<input type="radio" name="product" value="세탁기"><br>
 		<input type="submit" value="장바구니 넣기">
 	</form>
-	
 </body>
 </html>

@@ -11,20 +11,23 @@
 	function fn_process(){
 		var id=$("#id").val();
 		var pw=$("#pw").val();
+		
 		alert(id+":"+pw);
+		var _jsonInfo='{"sign":"login","id":"'+id+'","pw":"'+pw+'"}';
+		alert(_jsonInfo);
 		$.ajax({
-			type:"get",
-			dataType:"xml",
-			async:false,
+			type:"post",
+			dataType:"json",
+			async:true,
 			url:"main",
-			data:{sign:"login",id:id,pw:pw},
+			data:{jsonInfo:_jsonInfo},
 			success: function(msg,status){
-				$(msg).find("id").each(function(){
-					alert($(this).text());
-				});				
+				
+				$("#msgDiv").html(JSON.stringify(msg));
+
 			},
 			error: function(msg,status){
-				alert("success: "+msg+"\t status:"+status);
+				alert("error: "+msg+"\t status:"+status);
 			},
 			complete:function(){
 				alert("작업을 완료했습니다");
@@ -33,9 +36,12 @@
 	}
 </script>
 </head>
-<body>		
-		ID<input name="id" id="id"><br>
-		PW<input id="pw" type="password" name="pw"><br>
-		<input type="button" value="로그인" onclick="fn_process()">
-	
+<body>
+		<form action="main" method="get">
+			<input type="hidden" name="sign" value="login">
+			ID<input name="id" id="id"><br>
+			PW<input id="pw" type="password" name="pw"><br>
+			<input type="button" value="로그인" onclick="fn_process()">
+		</form>
+		<div id="msgDiv"></div>
 </html>
