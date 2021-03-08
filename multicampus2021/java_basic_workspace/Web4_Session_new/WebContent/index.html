@@ -6,8 +6,20 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	$(document).ready(function (){
-		
+		$("#loginBtn").click(function(){
+			$.post("main",
+				JSON.stringify({
+					sign:"login",
+					id:$("#id").val(),
+					pw:$("#pw").val()
+			    })
+			,function(msg,status){
+				var obj=JSON.parse(msg);
+				$("#msgDiv").html(obj.id+"님 환영합니다")
+			});
+		});
 	});
+
 	function fn_process(){
 		var id=$("#id").val();
 		var pw=$("#pw").val();

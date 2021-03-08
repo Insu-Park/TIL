@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#loginBtn").click(function(){
+				$.post("main",
+					JSON.stringify({
+						sign:"login",
+						id:$("#id").val(),
+						pw:$("pw").val()
+					})
+				,function(data,status){
+					var obj=JSON.parse(data);
+					if(obj.msg!=null){
+						alert(obj.msg);
+					}else{
+						if(obj.name!=null){
+							$("#loginDiv").html(obj.name+"님 환영합니다");
+						}else{
+							alert("다시 로그인 해주세요");
+						}
+					}
+				});
+			});
+		});
+</script>
+</head>
+<body>
+  <table border="1" width="600" height="500">
+    <tr width="600" height="100"><td colspan="2"><img src='duke.jpg' width="100" >
+    <h1 style='margin-left:50px;display:inline-block;'>Mongo Board</h1></td></tr>
+     <tr>
+    	<td width="150" height="350" align="center" valign="top">
+    	<form action="" method="get">    	    	      
+    			ID <input type="text" size="10" name="id"> <br>
+    			PW <input type="password" size="10" name="pw"> <br>
+    			<input type="submit" value="login"  />     		
+    	</form>
+    	</td>
+    	<td></td>
+    </tr>
+    <tr width="600" height="50"><td colspan="2" align="right">@Copyright by JES</td></tr>
+  </table>
+</body>
+
+</html>

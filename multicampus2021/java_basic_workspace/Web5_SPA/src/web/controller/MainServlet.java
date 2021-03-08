@@ -15,21 +15,28 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
+import web.dao.MemberDAO;
+import web.util.MyException;
 
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
 
+	MemberDAO mdao;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		process(request,response);		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		process(request,response);
+		process(request,response);		
 	}
-	
+
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		JSONObject resJson=new JSONObject();
+		
 		request.setCharacterEncoding("utf-8");
 		BufferedReader br=request.getReader();
 		JSONObject jsonObject=(JSONObject)JSONValue.parse(br);
@@ -41,40 +48,15 @@ public class MainServlet extends HttpServlet {
 		}else if(sign.equals("login")) {			
 			String id=(String) jsonObject.get("id");
 			String pw=(String) jsonObject.get("pw");
-
-			//dao login
-			//ok			
-			HttpSession session=request.getSession();
-			session.setAttribute("id", id);		
 			
-		
-			JSONObject returnObject=new JSONObject();
-			returnObject.put("id", id);
-			returnObject.put("pw", pw);
-			
-			String returnString=returnObject.toJSONString();
-			
-			PrintWriter out=response.getWriter();
-			out.append(returnString);
-
-		}else if(sign.equals("basketInsert")) {
-			String product=request.getParameter("product");
-			HttpSession session=request.getSession();
-			ArrayList<String> list=(ArrayList<String>) session.getAttribute("basket");
-			if(list==null) {
-				list=new ArrayList<String>();
-				session.setAttribute("basket", list);
+			try {
+				String name=mdao.login(id,pw);
+				resJson.put("name",  name);
+			} catch(MyException e) {
+				resJson.put("msg",  e.getMessage());
+				
 			}
-			list.add(product);
-			
-			RequestDispatcher disp=request.getRequestDispatcher("basketInsert_ok.jsp");
-			disp.forward(request, response);
-		}else if(sign.equals("logout")) {
-			HttpSession session=request.getSession();
-			session.invalidate();//세션 무효화
-			RequestDispatcher disp=request.getRequestDispatcher("index.html");
-			disp.forward(request, response);
 		}
+		out.append(resJson.toJSONString());
 	}
-
 }
