@@ -5,7 +5,7 @@
     xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -18,6 +18,34 @@
     		<property name="mappings">
     			<props>
     				<prop key="/test/index.do">simpleUrlController</prop>
+    			</props>
+    		</property>
+    	</bean>
+    	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        	<property name="viewClass" value="org.springframework.web.sevlet.view.JstlView"></property>
+        	<property name="prefix" value="/test/"></property>
+        	<property name="suffix" value=".jsp"></property>
+        </bean>
+    	<bean id="userUrlMapping"
+    		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"
+    	>
+    		<property name="mappings">
+    			<props>
+    				<prop key="/test/*.do">userController</prop>
+    			</props>
+    		</property>
+    	</bean>
+    	
+    	<bean id="userController" class="web.controller.UserController">
+    		<property name="methodNameResolver">
+    			<ref local="userMethodNameResolver" />
+    		</property>
+    	</bean>
+    	
+    	<bean id="userMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+    		<property name="mappings">
+    			<props>
+    				<prop key="/test/login.do">login</prop>
     			</props>
     		</property>
     	</bean>

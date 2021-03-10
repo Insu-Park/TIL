@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	index.jsp 입니다
+ 로그인 되셨습니다
 </body>
 </html>
