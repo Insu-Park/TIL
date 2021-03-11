@@ -92,6 +92,19 @@ public class MainServlet extends HttpServlet {
 			
 			RequestDispatcher disp=request.getRequestDispatcher("login_ok.jsp");
 			disp.forward(request, response);
+		}else if(sign.equals("memberUpdate")) {
+			
+			String id=request.getParameter("id3");
+			String pw=request.getParameter("pw3");
+			String name=request.getParameter("name");
+			
+			Date date=new Date();
+			MemberVO m=new MemberVO(id, pw, name, date);
+			
+			dao.memberInsert(m);
+			
+			RequestDispatcher disp=request.getRequestDispatcher("login_ok.jsp");
+			disp.forward(request, response);
 		}
 
 	}

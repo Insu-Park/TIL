@@ -41,5 +41,20 @@
 			values(#{id},#{pw},#{name},#{date})
 		]]>
 	</insert>
+	
+	<update id="memberUpdate" parameterType="memberVO">
+		<![CDATA[
+			update member
+			set pw=#{pw}, name=#{name}
+			where id=#{id}
+		]]>
+	</update>
+	
+	<delete id="memberDelete" parameterType="String">
+		<![CDATA[
+			delete from member where id=#{id} 
+		]]>
+	</delete>
+	
 
 </mapper>    
