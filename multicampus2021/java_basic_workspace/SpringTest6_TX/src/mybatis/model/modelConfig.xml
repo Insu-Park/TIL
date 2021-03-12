@@ -4,7 +4,9 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
 	<typeAliases>
 		<typeAlias type="web.vo.MemberVO" alias="memberVO"/>
 	</typeAliases>
+
 </configuration>
