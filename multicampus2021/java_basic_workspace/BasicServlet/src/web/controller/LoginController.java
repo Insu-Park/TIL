@@ -33,7 +33,7 @@ public class LoginController extends HttpServlet {
 		if(id==null || pw==null) {
 			return;
 		}else {
-			out.append("id");
+			out.append(id);
 		}
 
 	}
