@@ -1,14 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
+<%
+	String id, pw, name;	
+%>
 <!DOCTYPE html>
-<html lang="ko">
-
 <head>
-
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+  <title>NSJG</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,16 +30,35 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-		  <li class="nav-item">
-		  	<input type="hidden" name="key" value="login">
-		  	<font color=white>ID</font> <input name="id"> 
-		  </li>
-		  <li class="nav-item">
-		  	<font color=white>  PW</font> <input type="password" name="pw">
-		  	<input type="submit" value="login">	
-		  </li>
-		  
-
+          <li class="nav-item active">
+            <a class="nav-link" href="index.jsp">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <%
+          	if(session.getAttribute("name")==null){%>
+          		<li class="nav-item">
+                	<a class="nav-link" href="login.html">Login</a>
+              	</li>
+              	<li class="nav-item">
+                	<a class="nav-link" href="join.html">Join</a>
+              	</li>
+            <% }else{
+            	id=(String)session.getAttribute("id");
+        		pw=(String)session.getAttribute("pw");
+        		name=(String)session.getAttribute("name");
+        	%>
+            	<li class="nav-item active">
+      				<a class="nav-link" href="#"><%=name %>님 환영합니다!</a>
+      			</li>
+            	<li class="nav-item">
+            		
+            		<a class="nav-link" href="logout.jsp">Logout</a>
+          		</li>
+          	<% 	
+            }
+          %>
+           
         </ul>
       </div>
     </div>
@@ -51,11 +71,11 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">NOSAJAEGI</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">곡 평가</a>
-          <a href="#" class="list-group-item">가수 평가</a>
-          <a href="#" class="list-group-item">문의하기</a>
+          <a href="index.jsp" class="list-group-item">곡 평가</a>
+          <a href="index2.jsp" class="list-group-item">가수 평가</a>
+          <a href="./help.html" class="list-group-item">문의하기</a>
         </div>
 
       </div>
@@ -63,44 +83,35 @@
 
       <div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+        <br>
 
         <div class="row">
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="rate"><img class="card-img-top" src="./image/01.jfif" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#">IU - 너랑 나</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Last Fantasy</h5>
+				<input name="rating2" value="4.5" id="kartik" type="text" class="rating rating-loading" data-size="xs">	
+              </div>
+              <div class="card-footer">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="./image/02.jfif" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">IU - 분홍신</a>
+                </h4>
+                <h5>Modern Times</h5>
+
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -110,13 +121,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="./image/03.jfif" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Two</a>
+                  <a href="#">OH MY GIRL - 살짝 설렜어(Nonstop)</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <h5>NONSTOP</h5>
+
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -126,13 +137,29 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="./image/04.jfif" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Three</a>
+                  <a href="#">IU - Palette</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Palette</h5>
+
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="./image/05.jfif" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">OH MY GIRL - 비밀정원</a>
+                </h4>
+                <h5>비밀정원</h5>
+
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -140,47 +167,16 @@
             </div>
           </div>
 
+		
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="./image/06.jfif" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Four</a>
+                  <a href="#">OH MY GIRL - BUNGEE</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+                <h5>Fall in love</h5>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

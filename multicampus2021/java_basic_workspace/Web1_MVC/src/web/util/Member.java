@@ -32,6 +32,10 @@ public class Member {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Member(String id2, String pw2, String name2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId() {
 		return id;
 	}

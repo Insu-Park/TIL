@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 실패</title>
 </head>
 <body>
-	다시 로그인해주세요.
-	<br><a href='index.html'>홈으로 가기</a>
+	로그인에 실패했습니다.
+	<br><a href='login.html'>돌아가기</a>
 </body>
 </html>

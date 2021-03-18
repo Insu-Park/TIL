@@ -1,41 +1,27 @@
 package web.vo;
 
-import java.util.Date;
+// TODO: setter 유효성 검사 추가
 
-public class Member {
+
+public class MemberVO {
 	
-	public Member(String id, String pw) {
-		super();
-		this.id = id;
-		this.pw = pw;
-	}
-	private String id,pw,name;
-	private Date date;
+	private String id,pw,name,nick,email;
 	
-		
-	public Member(String id, String pw, String name, Date date) {
+	public MemberVO(String id, String pw, String name, String nick, String email) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
-		this.date = date;
+		this.nick = nick;
+		this.email = email;
+	}
+
+	public MemberVO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
 	}
 	
-	public Member(String str, int flag) {
-		super();
-		if(flag==0) this.id = str;
-		if(flag==1) this.pw = str;
-	}
-
-
-	public Member() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Member(String id2, String pw2, String name2) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -54,13 +40,17 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDate() {
-		return date;
+	public String getNick() {
+		return nick;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
-	
-
 }

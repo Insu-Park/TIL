@@ -8,7 +8,7 @@
 </head>
 <body>
 	${name }님 환영합니다.
-	<br><a href='index.html'>홈으로 가기</a>
+	<br><a href='index.jsp'>홈으로 가기</a>
 
 </body>
 </html>
