@@ -63,18 +63,13 @@ public class SongDAO {
 		Connection con=null;
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
-		System.out.println("1");
 		try {
-			System.out.println("1");
 			con=dbcp.getConnection();
-			System.out.println("1");
 			stmt=con.prepareStatement("select count(*) from ratelist where title=? and attcode=? and memid=? ");
 			stmt.setString(1, s.getTitle());
 			stmt.setInt(2, s.getAttcode());
 			stmt.setString(3, m.getId());
-			System.out.println("1");
 			rs=stmt.executeQuery();
-			System.out.println("1");
 			if(rs.next()) {
 				if(rs.getInt(1) == 0) {
 					
@@ -82,7 +77,7 @@ public class SongDAO {
 					stmt.setString(1, s.getTitle());
 					stmt.setInt(2, s.getAttcode());
 					stmt.setString(3, m.getId());
-					System.out.println("3");
+					System.out.println(s.getTitle()+":"+ s.getAttcode() + ":"+m.getId());
 					stmt.executeUpdate();
 					System.out.println("4");
 					

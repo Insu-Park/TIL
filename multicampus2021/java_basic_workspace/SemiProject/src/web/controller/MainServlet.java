@@ -85,6 +85,9 @@ public class MainServlet extends HttpServlet {
 				disp.forward(request, response);
 			}else if(key.equalsIgnoreCase("ratesong")) {
 				double rate=Double.parseDouble(request.getParameter("rating"));
+				id=(String)session.getAttribute("id");
+				pw=(String)session.getAttribute("pw");
+				
 				MemberVO m=new MemberVO(id, pw);
 				SongVO s=new SongVO("너랑 나", 1, rate);
 				String msg=sDao.rateInsert(m, s);

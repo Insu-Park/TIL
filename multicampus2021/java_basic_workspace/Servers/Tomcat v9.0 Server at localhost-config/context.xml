@@ -23,9 +23,16 @@
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
-    <Manager pathname="" />
-    -->
+   <Manager className="org.apache.catalina.session.PersistentManager"
+
+		debug="0"
+		saveOnRestart="false" 
+		maxActiveSessions="-1"
+		minIdleSwap="-1"
+		maxIdleSwap="-1"
+		maxIdleBackup="-1">
+		<Store className="org.apache.catalina.session.FileStore"/>
+	</Manager>
     <Resource
     	name="jdbc/oracle"
     	auth="Container"
