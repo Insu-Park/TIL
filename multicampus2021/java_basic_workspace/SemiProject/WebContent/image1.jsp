@@ -3,13 +3,18 @@
 <%
 	String id, pw, name;
   	if(session.getAttribute("name")==null){
-		response.sendRedirect("login.html");
+		response.sendRedirect("login_resist_form.html");
     }else{
     	id=(String)session.getAttribute("id");
 		pw=(String)session.getAttribute("pw");
 		name=(String)session.getAttribute("name");
     }
 	String rate=(String)request.getAttribute("rate");
+	String msg=(String)request.getAttribute("msg");
+	if(msg!=null){
+		out.append("<script>alert('" + msg + "');</script>");
+	}
+	
 %>
 <!DOCTYPE html>
 <head>
@@ -52,18 +57,34 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-9">
+        
+        <h2>IU - 너랑 나</h2>
         <br>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
-          <a href="rate"><img class="card-img-top" src="./image/01.jfif" alt="">
+          	<a href="rate"><img class="card-img-top" src="./image/01.jfif" alt="">
           
           </div>
-          IU - 너랑 나
+	          
+	      
+          <hr>
           <form action="main" method="post">
 			<input type="hidden" name="key" value="ratesong">
           	<input name="rating" id="rate" class="rating" data-stars="5" data-step="0.1"/>
-          	<input type="submit" value="제출">
+          	<hr>
+          	<input type="submit" value="제출">  
 		  </form>
+		  <script>
+		  	<% if(msg!=null){
+		  		%>
+		  	
+		  	alert(<%= msg %>);
+		  	<%}%>
+		  </script>
+			
+	
+		  
+		  
         </div>
         <input name="rating2" value="<%=rate%>" id="kartik" class="rating" data-stars="5" data-step="0.1" data-size="xs">
         <script>
@@ -78,12 +99,14 @@
 
     </div>
     <!-- /.row -->
-
+    <div style=  margin-left:550px>
+		<button type="button"><a href="song">홈으로</a></button>
+	</div>
   </div>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
-    <div class="container">
+    <div class="container" >
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
     </div>
     <!-- /.container -->

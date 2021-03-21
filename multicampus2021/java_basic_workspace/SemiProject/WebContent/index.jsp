@@ -1,7 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" import="java.util.ArrayList"%>
 
 <%
-	String id, pw, name;	
+	String id, pw, name;
+	ArrayList<String> list=(ArrayList<String>)request.getAttribute("list");
+	if(list==null){
+		list = new ArrayList<String>();
+		for(int i=0; i<6; i++)
+			list.add("0");
+	}
 %>
 <!DOCTYPE html>
 <head>
@@ -24,24 +30,21 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">음악 추천 사이트</a>
+      <a class="navbar-brand" href="song">음악 추천 사이트</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.jsp">Home
+            <a class="nav-link" href="song">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <%
           	if(session.getAttribute("name")==null){%>
           		<li class="nav-item">
-                	<a class="nav-link" href="login.html">Login</a>
-              	</li>
-              	<li class="nav-item">
-                	<a class="nav-link" href="join.html">Join</a>
+                	<a class="nav-link" href="login_resist_form.html">Login / Register</a>
               	</li>
             <% }else{
             	id=(String)session.getAttribute("id");
@@ -73,8 +76,7 @@
 
         <h1 class="my-4">NOSAJAEGI</h1>
         <div class="list-group">
-          <a href="index.jsp" class="list-group-item">곡 평가</a>
-          <a href="index2.jsp" class="list-group-item">가수 평가</a>
+          <a href="song" class="list-group-item">곡 평가</a>
           <a href="./help.html" class="list-group-item">문의하기</a>
         </div>
 
@@ -95,10 +97,9 @@
                   <a href="#">IU - 너랑 나</a>
                 </h4>
                 <h5>Last Fantasy</h5>
-				<input name="rating2" value="4.5" id="kartik" type="text" class="rating rating-loading" data-size="xs">	
               </div>
               <div class="card-footer">
-                
+                <%= list.get(0)%>/5.0
               </div>
             </div>
           </div>
@@ -114,7 +115,7 @@
 
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <%= list.get(1)%>/5.0
               </div>
             </div>
           </div>
@@ -130,7 +131,7 @@
 
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <%= list.get(2)%>/5.0
               </div>
             </div>
           </div>
@@ -146,7 +147,7 @@
 
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <%= list.get(3)%>/5.0
               </div>
             </div>
           </div>
@@ -162,7 +163,7 @@
 
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <%= list.get(4)%>/5.0
               </div>
             </div>
           </div>
@@ -179,7 +180,7 @@
 
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <%= list.get(5)%>/5.0
               </div>
             </div>
           </div>

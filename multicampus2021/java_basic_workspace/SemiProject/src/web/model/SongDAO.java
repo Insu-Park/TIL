@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -102,7 +104,7 @@ public class SongDAO {
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
-			throw new MyException("회원가입 실패");
+			throw new MyException("평점 조회 실패");
 		}finally {
 			try {
 				if(rs!=null) rs.close();
@@ -113,6 +115,36 @@ public class SongDAO {
 			}
 		}		
 		
+	}
+	
+	public List<String> rateList() throws MyException {
+		List<String> list=new ArrayList<String>();
+		Connection con=null;
+		PreparedStatement stmt=null;
+		ResultSet rs=null;
+		try {
+			con=dbcp.getConnection();
+			stmt=con.prepareStatement("select rate, count from song order by imgfilename");
+			
+			rs=stmt.executeQuery();
+			while(rs.next()) {
+				Double rate =rs.getDouble("rate");
+				int count=rs.getInt("count");
+				list.add(Double.toString(Math.round((rate / count) * 10) / 10.0));
+			}
+			return list;		
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new MyException("평점 조회 실패");
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(stmt!=null) stmt.close();
+				if(con!=null) con.close();
+			} catch (SQLException e) {
+				
+			}
+		}
 	}
 
 	

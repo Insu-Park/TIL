@@ -58,7 +58,7 @@ public class MainServlet extends HttpServlet {
 				String name=mDao.login(id,pw);
 				
 				if(name!=null) {
-					RequestDispatcher disp=request.getRequestDispatcher("index.jsp");
+					RequestDispatcher disp=request.getRequestDispatcher("song");
 					session=request.getSession();
 					request.setAttribute("name", name);
 					session.setAttribute("id", id);

@@ -3,7 +3,7 @@
     
 <%
 	session.invalidate();
-	response.sendRedirect("index.jsp");
+	response.sendRedirect("song");
 %>
 
 <!DOCTYPE html>

@@ -40,10 +40,7 @@
           <%
           	if(session.getAttribute("name")==null){%>
           		<li class="nav-item">
-                	<a class="nav-link" href="login.html">Login</a>
-              	</li>
-              	<li class="nav-item">
-                	<a class="nav-link" href="join.html">Join</a>
+                	<a class="nav-link" href="login.html">Login / Join</a>
               	</li>
             <% }else{
             	id=(String)session.getAttribute("id");
