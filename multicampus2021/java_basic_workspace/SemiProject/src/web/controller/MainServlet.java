@@ -68,7 +68,7 @@ public class MainServlet extends HttpServlet {
 					disp.forward(request, response);
 				}else {
 					RequestDispatcher disp=request.getRequestDispatcher("login_fail.jsp");
-					disp.forward(request, response);
+					disp.forward(request, response);	
 				}
 			}else if(key.equalsIgnoreCase("join")) {
 				id=request.getParameter("id");

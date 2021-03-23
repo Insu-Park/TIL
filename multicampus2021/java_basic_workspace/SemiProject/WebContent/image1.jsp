@@ -65,7 +65,6 @@
           	<a href="rate"><img class="card-img-top" src="./image/01.jfif" alt="">
           
           </div>
-	          
 	      
           <hr>
           <form action="main" method="post">
@@ -82,9 +81,6 @@
 		  	<%}%>
 		  </script>
 			
-	
-		  
-		  
         </div>
         <input name="rating2" value="<%=rate%>" id="kartik" class="rating" data-stars="5" data-step="0.1" data-size="xs">
         <script>
