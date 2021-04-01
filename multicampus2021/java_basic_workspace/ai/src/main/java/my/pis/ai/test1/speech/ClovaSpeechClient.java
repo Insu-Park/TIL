@@ -1,6 +1,8 @@
 package my.pis.ai.test1.speech;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
@@ -20,10 +22,22 @@ import org.apache.http.util.EntityUtils;
 
 import com.google.gson.Gson;
 
+/**
+ * 
+ * 1. maven project를 만든다
+ * 2. https://apidocs.ncloud.com/ko/ai-application-service/clova_speech/clova_speech/를 참조하여 
+ * apache http lib와 gson lib등을 추가하고 소스코드를 복사해 온다
+ * 3. 제공되는 INVOKE_URL과 SECRET 값을 넣어준다
+ * 4. 컴퓨터에서 음성 녹음기 등을 이용하여 sample.wav를 만들어 이 프로젝트 이름 바로 아래에 넣는다
+ * 5. 156행에 sample.wav라고 file path를 넣는다
+ * 6. 수행하면 음성인식된 결과가 텍스트로 출력된다
+ * @author javan_000
+ *
+ */
 public class ClovaSpeechClient {
 
-	private static final String SECRET = "";
-	private static final String INVOKE_URL = "";
+	private static final String SECRET = "ffaed44214be4fabacc59a7fbedc6020";
+	private static final String INVOKE_URL = "https://clovaspeech-gw.ncloud.com/external/v1/273/4a8ecfcbec2aa4e7166cff4898f634b1f9dcd2828ef2061096837b92c3e222f9";
 
 	private CloseableHttpClient httpClient = HttpClients.createDefault();
 	private Gson gson = new Gson();
@@ -138,9 +152,9 @@ public class ClovaSpeechClient {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {		
 		final ClovaSpeechClient clovaSpeechClient = new ClovaSpeechClient();
-		final String result = clovaSpeechClient.upload(new File("file path"), "sync", null, null, null, null);
+		final String result = clovaSpeechClient.upload(new File("sample.wav"), "sync", null, null, null, null);
 		//final String result = clovaSpeechClient.url("file URL", "sync", null, null, "", null);
 		//final String result = clovaSpeechClient.objectStorage("Object Storage key", "sync", null, null, "", null);
 		System.out.println(result);
