@@ -6,9 +6,11 @@ import org.springframework.stereotype.Repository;
 import com.mulcam.ai.web.vo.MemberVO;
 
 @Mapper
-@Repository
+@Repository("memberDAO")
 public interface MemberDAO {
 	
-	public void memberInsert(MemberVO memberVO);
-	public String login(MemberVO m);
+	public void memberInsert(MemberVO memberVO) ;
+
+	public String login(MemberVO memberVO);
+
 }

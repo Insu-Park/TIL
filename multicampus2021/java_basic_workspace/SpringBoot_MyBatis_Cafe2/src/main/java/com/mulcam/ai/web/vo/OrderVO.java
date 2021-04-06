@@ -1,12 +1,26 @@
 package com.mulcam.ai.web.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderVO {
-
-	private String ordermethod, product_name;
+public class OrderVO implements Serializable{
+	
+	private String ordermethod,product_name;
 	private Long order_group_no,quantity;
 	private Date orderdate;
+	
+		
+	
+	public OrderVO(String ordermethod, String product_name, Long quantity) {
+		super();
+		this.ordermethod = ordermethod;
+		this.product_name = product_name;
+		this.quantity = quantity;
+	}
+	public OrderVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public String getOrdermethod() {
 		return ordermethod;
 	}
@@ -37,26 +51,12 @@ public class OrderVO {
 	public void setOrderdate(Date orderdate) {
 		this.orderdate = orderdate;
 	}
-	public OrderVO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public OrderVO(String ordermethod, String product_name, Long order_group_no, Long quantity, Date orderdate) {
-		super();
-		this.ordermethod = ordermethod;
-		this.product_name = product_name;
-		this.order_group_no = order_group_no;
-		this.quantity = quantity;
-		this.orderdate = orderdate;
-	}
-	public OrderVO(String ordermethod, String prodname, long quantity) {
-		
-		this.ordermethod = ordermethod;
-		this.product_name = prodname;
-		this.quantity = quantity;
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "OrderVO [ordermethod=" + ordermethod + ", product_name=" + product_name + ", order_group_no="
+				+ order_group_no + ", quantity=" + quantity + ", orderdate=" + orderdate + "]";
 	}
 	
 	
-	
+
 }

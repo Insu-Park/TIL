@@ -17,8 +17,9 @@ import com.mulcam.ai.web.vo.MemberVO;
 @Controller
 public class MemberController {
 	
-	@Autowired MemberService memberService;
-
+	@Autowired 
+	MemberService memberService;
+	
 	
 	@RequestMapping(value = "logout.jes", 
 			method= {RequestMethod.POST},
@@ -33,6 +34,10 @@ public class MemberController {
 		
 	}
 
+	
+	
+	
+	
 	@RequestMapping(value = "login.jes", 
 			method= {RequestMethod.POST},
 			produces = "application/text; charset=utf8")			
@@ -41,31 +46,33 @@ public class MemberController {
 			HttpServletResponse response){
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");		
+		
 		JSONObject json=new JSONObject();
-
+		
 		try {
 			MemberVO m=new MemberVO(id,pw); 
+			System.out.println(m);
 			String name=memberService.login(m);
 			if(name!=null) {
 				HttpSession session=request.getSession();
 				session.setAttribute("member", m);
-				json.put("name", name);
-
+				json.put("name", name);// {"name":"전은수"}
 			}else {
-				json.put("msg", "로그인 실패");
-
+				json.put("msg", "로그인 실패");// {"msg":"로그인 실패"}
 			}
 		}catch(Exception e) {
-			json.put("msg", e.getMessage());
-		}	
+			e.printStackTrace();
+			json.put("msg", e.getMessage());// {"msg":"NullPointerException"}
+		}
+		
 		return json.toJSONString();
 
 	}
 
+	
 	@RequestMapping(value = "memberInsert.jes", 
 			method= {RequestMethod.POST},
-			produces = "application/text; charset=utf8")
-			
+			produces = "application/text; charset=utf8")			
 	@ResponseBody
 	public String memberInsert(HttpServletRequest request,
 			HttpServletResponse response)throws Exception{
@@ -79,8 +86,10 @@ public class MemberController {
 			memberService.memberInsert(m);
 			return name+"님 회원가입 되셨습니다";
 		}catch(Exception e) {
+			e.printStackTrace();
 			return e.getMessage();
-		}		
+		}	
 		
 	}	
+
 }

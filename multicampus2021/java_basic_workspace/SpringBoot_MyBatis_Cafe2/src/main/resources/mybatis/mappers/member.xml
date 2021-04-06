@@ -11,12 +11,12 @@
 		]]>
 	</select>
 
-	
+
 	<insert id="memberInsert"   parameterType="memberVO" >
 		<![CDATA[
 			insert into member(id,pw,name) 
 			values(#{id},#{pw},#{name})
 		]]>
 	</insert>
-
+	
 </mapper>
