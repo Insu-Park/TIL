@@ -148,7 +148,7 @@ public class CafeUi extends javax.swing.JFrame {
         jPanel4.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel4.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\Ice_Americano.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lapil\\TIL\\multicampus2021\\java_basic_workspace\\AI_Cafe_Maven\\img\\Ice_Americano.jpg")); // NOI18N
         jPanel4.add(jLabel1);
         jLabel1.setBounds(0, 0, 220, 230);
 
@@ -192,7 +192,7 @@ public class CafeUi extends javax.swing.JFrame {
         jPanel5.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel5.setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\Hot_Americano.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lapil\\TIL\\multicampus2021\\java_basic_workspace\\AI_Cafe_Maven\\img\\Hot_Americano.jpg")); // NOI18N
         jPanel5.add(jLabel2);
         jLabel2.setBounds(0, 0, 240, 240);
 
@@ -221,7 +221,7 @@ public class CafeUi extends javax.swing.JFrame {
         jPanel6.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel6.setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\Ice_Latte.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\lapil\\TIL\\multicampus2021\\java_basic_workspace\\AI_Cafe_Maven\\img\\Ice_Latte.jpg")); // NOI18N
         jPanel6.add(jLabel3);
         jLabel3.setBounds(0, 0, 230, 230);
 
@@ -260,7 +260,7 @@ public class CafeUi extends javax.swing.JFrame {
         jPanel7.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel7.setLayout(null);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\Hot_Latte.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lapil\\TIL\\multicampus2021\\java_basic_workspace\\AI_Cafe_Maven\\img\\Hot_Latte.jpg")); // NOI18N
         jPanel7.add(jLabel4);
         jLabel4.setBounds(0, 0, 220, 210);
 
@@ -292,8 +292,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel8.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel8.setLayout(null);
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\blackTea.jpg")); // NOI18N
         jPanel8.add(jLabel13);
         jLabel13.setBounds(0, 0, 220, 230);
 
@@ -336,8 +334,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel9.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel9.setLayout(null);
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\greenTea.jpg")); // NOI18N
         jPanel9.add(jLabel15);
         jLabel15.setBounds(0, 0, 230, 230);
 
@@ -365,8 +361,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel10.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel10.setLayout(null);
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\peppermint.jpg")); // NOI18N
         jPanel10.add(jLabel17);
         jLabel17.setBounds(0, 0, 230, 230);
 
@@ -394,8 +388,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel11.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel11.setLayout(null);
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\chamomile.jpg")); // NOI18N
         jPanel11.add(jLabel19);
         jLabel19.setBounds(0, 0, 220, 210);
 
@@ -427,8 +419,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel13.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel13.setLayout(null);
-
-        jLabel21.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\cola.jpg")); // NOI18N
         jPanel13.add(jLabel21);
         jLabel21.setBounds(0, 0, 220, 230);
 
@@ -471,8 +461,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel14.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel14.setLayout(null);
-
-        jLabel23.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\cider.jpg")); // NOI18N
         jPanel14.add(jLabel23);
         jLabel23.setBounds(0, 0, 230, 230);
 
@@ -500,8 +488,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel15.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel15.setLayout(null);
-
-        jLabel25.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\orengeJuice.jpg")); // NOI18N
         jPanel15.add(jLabel25);
         jLabel25.setBounds(0, 0, 230, 230);
 
@@ -529,8 +515,6 @@ public class CafeUi extends javax.swing.JFrame {
 
         jPanel16.setPreferredSize(new java.awt.Dimension(300, 230));
         jPanel16.setLayout(null);
-
-        jLabel27.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\Grapefruit.jpg")); // NOI18N
         jPanel16.add(jLabel27);
         jLabel27.setBounds(0, 0, 220, 210);
 
@@ -613,7 +597,6 @@ public class CafeUi extends javax.swing.JFrame {
         jLabel5.setText("AI Cafe");
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\tool\\AI_Cafe_Maven\\img\\mic.png")); // NOI18N
         jLabel8.setText("\"커피주문\" 혹은 \"케익주문\"이라고 말해보세요");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

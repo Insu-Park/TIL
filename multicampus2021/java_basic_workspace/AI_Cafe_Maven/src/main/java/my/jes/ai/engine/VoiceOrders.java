@@ -35,15 +35,15 @@ public class VoiceOrders {
         String chatbotMessage = "";
 
         try {
-            String apiURL = "https://854974ea07194c61ba70fdb1b3859611.apigw.ntruss.com/custom/v1/4303/11c9b56527d9d206da11263ee45dfd2698ec2e5b8b2d90efe9127e85b9750163";
-
+            String apiURL = "https://clovachatbot.ncloud.com/api/chatbot/messenger/v1/4316/a860b858265b22dad3aaf1165cfc2936daf1d3d86e0b7b77e3cc07f59f96858f";
+            // 내걸로 바꾸기
             URL url = new URL(apiURL);
 
            // String voiceMessage="문 열어요?";
             String message = getReqMessage(voiceMessage);
             System.out.println("##" + message);
 
-            String secretKey="UHltYnBEYlJkQmVSS1FYRkFZS0RsY0tndWxxdmpGTWY=";
+            String secretKey="UkVBaEN2cElhR01KVVh4WXJQTmNMQW13RWx3WHdkdmw=";
             String encodeBase64String = makeSignature(message, secretKey);
 
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
